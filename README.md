@@ -32,3 +32,11 @@ The above simply allows you to run the application using the following url: http
 > symfony server:start -d
 ```
 If you have symfony installed, you can simply run the second command above.
+
+## Create landing page
+
+This is where we start with the coding. We need to create a landing page with a list of members and the ability to add and or update them.
+So we need to create a Home page controller with its templates. It will be called HomeController.php, simply follow the prompts
+```sh
+> ./bin/console make:controller
+```
