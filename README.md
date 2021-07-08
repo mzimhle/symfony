@@ -35,8 +35,18 @@ If you have symfony installed, you can simply run the second command above.
 
 ## Create landing page
 
+Before coding and connecting to the database, make sure you have the database connection correct, orm has already been installed, so you just need to go to the ./env file:
+```sh
+###> doctrine/doctrine-bundle ###
+DATABASE_URL="mysql://root:@127.0.0.1:3306/symfony?serverVersion=5.7"
+###< doctrine/doctrine-bundle ###
+```
 This is where we start with the coding. We need to create a landing page with a list of members and the ability to add and or update them.
-So we need to create a Home page controller with its templates. It will be called HomeController.php, simply follow the prompts
+So we need to create a Home page controller and an entity for members with its templates. It will be called HomeController.php, simply follow the prompts.
+
 ```sh
 > ./bin/console make:controller
+> ./bin/console make:entity
+> composer require omines/datatables-bundle
 ```
+After adding the controller, we simply sintall the datatables package.
