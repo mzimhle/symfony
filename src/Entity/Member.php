@@ -28,7 +28,7 @@ class Member
     private $surname;
 
     /**
-     * @ORM\Column(type="string", length=10, nullable=true)
+     * @ORM\Column(type="string", length=10)
      */
     private $cellphone;
 

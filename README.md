@@ -41,12 +41,19 @@ Before coding and connecting to the database, make sure you have the database co
 DATABASE_URL="mysql://root:@127.0.0.1:3306/symfony?serverVersion=5.7"
 ###< doctrine/doctrine-bundle ###
 ```
-This is where we start with the coding. We need to create a landing page with a list of members and the ability to add and or update them.
-So we need to create a Home page controller and an entity for members with its templates. It will be called HomeController.php, simply follow the prompts.
+After making sure the database connection is fine, we will create the following:
+- Controller - To process form data as well as define pages
+- Entity - To hanndle the database information for our table
+- Form - To handle submission of member for adding and editing.
+- Datatables - To display member list on the landing page
 
 ```sh
 > ./bin/console make:controller
 > ./bin/console make:entity
+> ./bin/console make:form
 > composer require omines/datatables-bundle
 ```
-After adding the controller, we simply sintall the datatables package.
+NOTE:
+- All validation will be handled by the DTO which we will create under /src/DTO/MemberDTO.php
+- No validation on entity and form
+- allowEmptyString set to false means that empty strings are NOT considered valid, used only if there is a min in your strin validation.

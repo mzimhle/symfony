@@ -1,25 +1,22 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Member List{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
 <!-- in the <head> section -->
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/datatables.min.css"/>
 <!-- before the closing <body> tag -->
 <script type="text/javascript" src="https://cdn.datatables.net/v/dt/jq-3.2.1/dt-1.10.16/datatables.min.js"></script>
-<div class="example-wrapper">
+<div class="wrapper">
 	<h1>Home</h1>
-	<!-- Insert this where you want the table to appear -->
+	<a href="{{ path('app_add') }}">Add Member</a>	
+	<br />
 	<div id="members">Loading...</div>
 </div>
 <script src="{{ asset('bundles/datatables/js/datatables.js') }}"></script>
 <script>
 $(function() {
-    $('#members').initDataTables({{ datatable_settings(datatable) }});
+	$('#members').initDataTables({{ datatable_settings(datatable) }});
 });
 </script>
 {% endblock %}
