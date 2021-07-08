@@ -39,7 +39,7 @@ class MemberDTO implements GroupSequenceProviderInterface
 
     /**
      * @var string
-     * @Assert\NotBlank(message="Cellphone number is required.")	 
+     * @Assert\NotBlank(message="Cellphone number is required.")
      * @Assert\Regex(pattern="/0[0-9]{9}+$/", message="A valid cellphone number is required.")
      * @Assert\Length(min = 10, max = 10,
      *    minMessage = "This value must be at least {{ min }} numbers long.",
@@ -50,7 +50,7 @@ class MemberDTO implements GroupSequenceProviderInterface
 
     /**
      * @var string
-     * @Assert\Email( message="A valid email address is required.")
+     * @Assert\Email( message="A valid email address is required.") 
      * @Assert\Length(min = 10, max = 50,
      *    minMessage = "This value must be at least {{ min }} numbers long.",
      *    maxMessage = "This value cannot be longer than {{ max }} numbers.",  

@@ -19,7 +19,7 @@ class MemberForm extends AbstractType
 			->add('surname', TextType::class, array('label' => 'Surname'))
 			->add('cellphone', TextType::class, array('label' => 'Cellphone'))
 			->add('email', TextType::class, array('label' => 'Email'))
-			->add('save', SubmitType::class)
+			->add('save', SubmitType::class, array('label' => 'Save'))
         ;
     }
 

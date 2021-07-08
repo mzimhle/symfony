@@ -37,7 +37,9 @@ class HomeController extends AbstractController
     {
 	
         $table = $dataTableFactory->create()
-            ->add('name', TextColumn::class, ['label' => 'Name'])
+			->add('name', TextColumn::class, ['orderable'=> false, 'label' => 'Name', 'render' => function($value, $context) {
+					return '<a href="/edit/'.$context->getId().'">'.$context->getName().'</a>';
+			}])
             ->add('surname', TextColumn::class, ['label' => 'Surname'])
             ->add('cellphone', TextColumn::class, ['label' => 'Cellphone Number'])
             ->add('email', TextColumn::class, ['label' => 'Email Address'])
@@ -90,7 +92,7 @@ class HomeController extends AbstractController
         $memberDTO->cellphone = $member->getCellphone();
         $memberDTO->email = $member->getEmail();
 		
-        return $this->handleMemberDTO($request, $memberDTO);
+        return $this->handleMemberDTO($request, $memberDTO, $member);
     }
     /**	 
      * Process adding and updating of a member
